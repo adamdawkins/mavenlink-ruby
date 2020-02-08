@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.mavenlink.com/api/v1/workspaces/28370425
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer API_TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Feb 2020 20:05:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      X-Request-Id:
+      - b2671bf9-b936-474b-a0ec-da8578836e97
+      X-Runtime:
+      - '0.110046'
+      Strict-Transport-Security:
+      - max-age=631139040
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"count":1,"results":[{"key":"workspaces","id":"28370425"}],"workspaces":{"28370425":{"title":"Dragon
+        Drop - Test Don''t Delete","account_id":6300575,"archived":false,"description":"","due_date":"2019-11-30","effective_due_date":"2019-11-30","start_date":"","budgeted":true,"change_orders_enabled":true,"updated_at":"2020-01-30T02:53:42-08:00","created_at":"2019-11-07T06:54:21-08:00","consultant_role_name":"Kruze
+        Consulting","client_role_name":"Clients","percentage_complete":0,"access_level":"admins","exclude_archived_stories_percent_complete":false,"show_nonbillable_time_on_invoices":true,"can_create_line_items":false,"default_rate":"0.00","currency":"USD","currency_symbol":"$","currency_base_unit":100,"can_invite":null,"has_budget_access":true,"tasks_default_non_billable":false,"rate_card_id":647755,"workspace_invoice_preference_id":5514655,"posts_require_privacy_decision":false,"require_time_approvals":false,"require_expense_approvals":false,"has_active_timesheet_submissions":false,"has_active_expense_report_submissions":false,"status":{"color":"grey","key":130,"message":"Not
+        Started"},"update_whitelist":["title","budgeted","start_date","due_date","description","currency","access_level","consultant_role_name","client_role_name","rate_card_id","exclude_archived_stories_percent_complete","tasks_default_non_billable","stories_are_fixed_fee_by_default","expenses_in_burn_rate","posts_require_privacy_decision","status_key","invoice_preference","approver_id","approver_ids","workspace_group_ids","project_template_start_date","project_template_assignment_mappings","project_template_weekends_as_workdays","project_template_create_unnamed_resources","project_tracker_template_id","target_margin","external_reference","account_color_id","show_nonbillable_time_on_invoices","archived","price","project_template_before_story_id","change_orders_enabled"],"account_features":{"time_trackable":false,"has_time_entry_role_picker":false,"project_side_panel":false},"permissions":{"can_upload_files":false,"can_private_message":true,"can_join":true,"is_participant":false,"access_level":null,"team_lead":null,"user_is_client":null,"can_change_price":false,"can_change_story_billable":false,"can_post":false,"can_edit":false,"restricted":null,"can_see_financials":false,"is_guest_on_project":false},"over_budget":false,"expenses_in_burn_rate":true,"total_expenses_in_cents":0,"price_in_cents":5000000,"price":"$50,000","percent_of_budget_used":0,"budget_used":"$10","budget_used_in_cents":1000,"budget_remaining":"$49,990","target_margin":null,"creator_id":"12069395","primary_maven_id":"12069395","id":"28370425"}},"meta":{"count":1,"page_count":1,"page_number":1,"page_size":20}}'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2020 20:05:44 GMT
+recorded_with: VCR 5.0.0

@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.mavenlink.com/api/v1/workspace_groups/2551145
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer API_TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Feb 2020 20:05:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      X-Request-Id:
+      - b765f433-1ccc-4c16-8ffd-5cf77da1c826
+      X-Runtime:
+      - '0.049966'
+      Strict-Transport-Security:
+      - max-age=631139040
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"count":1,"results":[{"key":"workspace_groups","id":"2551145"}],"workspace_groups":{"2551145":{"created_at":"2020-01-30T02:18:11-08:00","updated_at":"2020-01-30T02:18:11-08:00","name":"DRAGON
+        DROP TEST","company":true,"contact_name":"Jonathan Bowen","email":"jonathan@dragondrop.uk","phone_number":"","address":"","website":"","notes":"Test
+        client for Stripe Integration","id":"2551145"}},"meta":{"count":1,"page_count":1,"page_number":1,"page_size":20}}'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2020 20:05:41 GMT
+recorded_with: VCR 5.0.0

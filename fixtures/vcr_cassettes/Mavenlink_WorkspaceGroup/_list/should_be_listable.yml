@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.mavenlink.com/api/v1/workspace_groups
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer API_TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Feb 2020 20:05:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      X-Request-Id:
+      - 1b98a7ec-26cf-491e-a031-f7da70f76c8c
+      X-Runtime:
+      - '0.048433'
+      Strict-Transport-Security:
+      - max-age=631139040
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"count":347,"results":[{"key":"workspace_groups","id":"2186095"},{"key":"workspace_groups","id":"2186105"},{"key":"workspace_groups","id":"2186115"},{"key":"workspace_groups","id":"2310465"},{"key":"workspace_groups","id":"2336765"},{"key":"workspace_groups","id":"2193795"},{"key":"workspace_groups","id":"2186125"},{"key":"workspace_groups","id":"2186135"},{"key":"workspace_groups","id":"2186145"},{"key":"workspace_groups","id":"2186155"},{"key":"workspace_groups","id":"2186165"},{"key":"workspace_groups","id":"2186175"},{"key":"workspace_groups","id":"2186185"},{"key":"workspace_groups","id":"2186195"},{"key":"workspace_groups","id":"2186205"},{"key":"workspace_groups","id":"2186215"},{"key":"workspace_groups","id":"2186225"},{"key":"workspace_groups","id":"2186235"},{"key":"workspace_groups","id":"2353665"},{"key":"workspace_groups","id":"2186245"}],"workspace_groups":{"2186095":{"created_at":"2019-08-19T09:41:55-07:00","updated_at":"2020-01-30T19:53:17-08:00","name":"3AYEZ
+        INC.","company":true,"contact_name":"Abdel Morsy","email":"abdel@3ayez.com","phone_number":"","address":"","website":"","notes":null,"id":"2186095"},"2186105":{"created_at":"2019-08-19T09:41:55-07:00","updated_at":"2019-08-19T09:41:55-07:00","name":"3DBEAR
+        INC.","company":true,"contact_name":"Jussi Kajala","email":"jussi@3dbear.io","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186105"},"2186115":{"created_at":"2019-08-19T09:41:55-07:00","updated_at":"2019-08-19T09:41:55-07:00","name":"3SCAN
+        INC.","company":true,"contact_name":"3scan Team","email":"invoices@3scan.com","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186115"},"2310465":{"created_at":"2019-10-30T12:47:17-07:00","updated_at":"2019-10-30T12:47:17-07:00","name":"ADASTRAGOV,
+        INC.","company":true,"contact_name":null,"email":null,"phone_number":null,"address":null,"website":null,"notes":null,"id":"2310465"},"2336765":{"created_at":"2019-11-14T11:33:42-08:00","updated_at":"2019-11-14T11:33:42-08:00","name":"AETIO
+        BIOTHERAPY INC","company":true,"contact_name":null,"email":null,"phone_number":null,"address":null,"website":null,"notes":null,"id":"2336765"},"2193795":{"created_at":"2019-08-21T15:55:37-07:00","updated_at":"2019-08-21T15:55:37-07:00","name":"AIRMID
+        CRITICAL CARE PRODUCTS, INC.","company":true,"contact_name":null,"email":null,"phone_number":null,"address":null,"website":null,"notes":null,"id":"2193795"},"2186125":{"created_at":"2019-08-19T09:41:55-07:00","updated_at":"2019-08-19T09:41:55-07:00","name":"AIRY
+        INC.","company":true,"contact_name":"Steffen Hoellinger","email":"steffen@airy.co","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186125"},"2186135":{"created_at":"2019-08-19T09:41:55-07:00","updated_at":"2019-08-19T09:41:55-07:00","name":"ALGOMEDICA
+        INC.","company":true,"contact_name":"Jagdish Vij","email":"jagdish.vij@algomedica.com","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186135"},"2186145":{"created_at":"2019-08-19T09:41:55-07:00","updated_at":"2019-08-19T09:41:55-07:00","name":"ALL
+        INSPIRE HEALTH INC.","company":true,"contact_name":"Vin","email":"vin@inspiren.com","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186145"},"2186155":{"created_at":"2019-08-19T09:41:56-07:00","updated_at":"2019-08-19T09:41:56-07:00","name":"ALLOCATE
+        INC.","company":true,"contact_name":"David Flatow","email":"david@allocate.ai","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186155"},"2186165":{"created_at":"2019-08-19T09:41:56-07:00","updated_at":"2019-08-19T09:41:56-07:00","name":"ALPHARANK
+        INC.","company":true,"contact_name":"Carlo Cardilli","email":"carlo@alpharank.io","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186165"},"2186175":{"created_at":"2019-08-19T09:41:56-07:00","updated_at":"2019-08-19T09:41:56-07:00","name":"ALTRUIST
+        CORP","company":true,"contact_name":"Jason Wenk","email":"jwenk@altruist.com","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186175"},"2186185":{"created_at":"2019-08-19T09:41:56-07:00","updated_at":"2019-08-19T09:41:56-07:00","name":"AMBER.IO
+        INC.","company":true,"contact_name":"Razvan Roman","email":"roman@twotap.com","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186185"},"2186195":{"created_at":"2019-08-19T09:41:56-07:00","updated_at":"2019-08-19T09:41:56-07:00","name":"AMBIENT
+        AI INC.","company":true,"contact_name":"Shikhar Shrestha","email":"shikhar@ambient.ai","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186195"},"2186205":{"created_at":"2019-08-19T09:41:56-07:00","updated_at":"2019-08-19T09:41:56-07:00","name":"ANTHEIA
+        INC.","company":true,"contact_name":null,"email":null,"phone_number":null,"address":null,"website":null,"notes":null,"id":"2186205"},"2186215":{"created_at":"2019-08-19T09:41:57-07:00","updated_at":"2019-08-19T09:41:57-07:00","name":"APOLLO
+        AGRICULTURE INC.","company":true,"contact_name":"Eli","email":"eli@apolloagriculture.com","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186215"},"2186225":{"created_at":"2019-08-19T09:41:57-07:00","updated_at":"2019-08-19T09:41:57-07:00","name":"AREAMETRICS
+        INC.","company":true,"contact_name":"Carey Bennett","email":"carey@areametrics.com","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186225"},"2186235":{"created_at":"2019-08-19T09:41:57-07:00","updated_at":"2019-08-19T09:41:57-07:00","name":"ARTARA
+        THERAPEUTICS INC.","company":true,"contact_name":"Jesse Shefferman","email":"jesse.shefferman@artaratx.com","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186235"},"2353665":{"created_at":"2019-11-26T18:35:40-08:00","updated_at":"2019-11-26T18:35:40-08:00","name":"ARTCOMPILER,
+        INC.","company":true,"contact_name":null,"email":null,"phone_number":null,"address":null,"website":null,"notes":null,"id":"2353665"},"2186245":{"created_at":"2019-08-19T09:41:57-07:00","updated_at":"2019-08-19T09:41:57-07:00","name":"ASKMOS
+        INC","company":true,"contact_name":"Amira Yahyaoui","email":"amira@mos.com","phone_number":null,"address":null,"website":null,"notes":null,"id":"2186245"}},"meta":{"count":347,"page_count":18,"page_number":1,"page_size":20}}'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2020 20:05:41 GMT
+recorded_with: VCR 5.0.0
