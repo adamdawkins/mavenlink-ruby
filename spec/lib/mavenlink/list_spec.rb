@@ -43,7 +43,58 @@ RSpec.describe Mavenlink::List do
     expect(list.each.to_a.first).to be_a MockResource
   end
 
+  describe "filtering" do
+    let(:response) do
+      {
+        "count" => 4,
+        "results" => [
+          { "key" => "things", "id" => "1" },
+          { "key" => "things", "id" => "2" },
+          { "key" => "things", "id" => "3" },
+          { "key" => "things", "id" => "4" },
+        ],
+        "things" => {
+          "1" => { "id" => 1, "subject_id" => "A" },
+          "2" => { "id" => 2, "subject_id" => "A" },
+          "3" => { "id" => 3, "subject_id" => "B" },
+          "4" => { "id" => 4, "subject_id" => "C" },
+        },
+        "meta" => {
+          "count" => 4,
+          "page_count" => 1,
+          "page_number" => 1,
+        },
+      }
+    end
+
+    it "applies a given filter to the results of the list" do
+      list = Mavenlink::List.new(Mavenlink::Thing, response, filters: { "subject_id" => "A" })
+      expect(list.each.to_a.count).to eq 2
+    end
+  end
+
   describe "#auto_paging_each" do
+    # We do a lot of setup here to mimic three pages worth of results.
+    # A `foo` flag is added to each result to allow us to test filtering
+    let(:initial_response) do
+      {
+        "count" => 5,
+        "results" => [
+          { "key" => "things", "id" => "1" },
+          { "key" => "things", "id" => "2" },
+        ],
+        "things" => {
+          "1" => { "id" => 1, "foo" => true },
+          "2" => { "id" => 2, "foo" => false },
+        },
+        "meta" => {
+          "count" => 5,
+          "page_count" => 3,
+          "page_number" => 1,
+        },
+      }
+    end
+
     before do
       stub_request(:get, "#{Mavenlink.api_base}/things")
         .with(query: { page: 2 })
@@ -58,8 +109,8 @@ RSpec.describe Mavenlink::List do
               { key: "things", id: "4" },
             ],
             things: {
-              "3": { id: 3 },
-              "4": { id: 4 },
+              "3": { id: 3, foo: true },
+              "4": { id: 4, foo: false },
             },
             meta: {
               count: 5,
@@ -81,7 +132,7 @@ RSpec.describe Mavenlink::List do
               { key: "things", id: "5" },
             ],
             things: {
-              "5": { id: 5 },
+              "5": { id: 5, foo: false },
             },
             meta: {
               count: 5,
@@ -116,6 +167,12 @@ RSpec.describe Mavenlink::List do
       allow(Foo).to receive(:bar)
       list.auto_paging_each { Foo.bar }
       expect(Foo).to have_received(:bar).exactly(5).times
+    end
+    describe "filtering" do
+      let(:list) { Mavenlink::List.new(Mavenlink::Thing, initial_response, filters: { foo: true }) }
+      it "passes filters through each page" do
+        expect(list.auto_paging_each.map(&:foo).all?).to eq true
+      end
     end
   end
 end

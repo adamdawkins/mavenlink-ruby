@@ -9,12 +9,20 @@ module Mavenlink
     attr_reader :page_number
     attr_reader :page_count
 
-    def initialize(klass, response)
+    def initialize(klass, response, options = {})
       @meta = response["meta"]
       @klass = klass
       @page_number = @meta["page_number"]
       @page_count = @meta["page_count"]
+      @options = options
       results = Util.results(response)
+
+      if @options[:filters]
+        results.select! do |res|
+          @options[:filters].map { |key, value| res[key] == value }.all?
+        end
+      end
+
       @data = results.map { |thing| klass.new(thing) }
     end
 
@@ -40,7 +48,7 @@ module Mavenlink
     end
 
     def next_page
-      @klass.list(page: @page_number + 1)
+      @klass.list({ page: @page_number + 1 }, @options)
     end
   end
 end
