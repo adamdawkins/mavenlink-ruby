@@ -23,6 +23,8 @@ module Mavenlink
     end
 
     def auto_paging_each(&blk)
+      return enum_for(:auto_paging_each) unless block_given?
+
       page = self
       loop do
         page.each(&blk)

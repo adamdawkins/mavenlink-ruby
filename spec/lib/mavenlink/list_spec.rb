@@ -92,31 +92,21 @@ RSpec.describe Mavenlink::List do
           )
         )
     end
-    let(:initial_response) do
-      {
-        "count" => 5,
-        "results" => [
-          { "key" => "things", "id" => "1" },
-          { "key" => "things", "id" => "2" },
-        ],
-        "things" => {
-          "1" => { "id" => 1 },
-          "2" => { "id" => 2 },
-        },
-        "meta" => {
-          "count" => 5,
-          "page_count" => 3,
-          "page_number" => 1,
-        },
-      }
-    end
 
     let(:list) { Mavenlink::List.new(Mavenlink::Thing, initial_response) }
     it "requests all the pages from the API" do
-      list.auto_paging_each
+      list.auto_paging_each(&:id)
       expect(a_request(:get, "#{Mavenlink.api_base}/things").with(query: { page: 2 })).to have_been_made
       expect(a_request(:get, "#{Mavenlink.api_base}/things").with(query: { page: 3 })).to have_been_made
       expect(a_request(:get, "#{Mavenlink.api_base}/things").with(query: { page: 4 })).to_not have_been_made
+    end
+
+    it "returns an Enumerable" do
+      expect(list.auto_paging_each).to be_an Enumerable
+    end
+
+    it "implements #count" do
+      expect(list.auto_paging_each.count).to eq 5
     end
 
     it "iterates all the results" do
