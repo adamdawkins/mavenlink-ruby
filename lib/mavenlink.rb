@@ -23,7 +23,7 @@ module Mavenlink
   end
 end
 
-require "mavenlink/list_object"
+require "mavenlink/list"
 require "mavenlink/util"
 
 require "mavenlink/api_operations/request"

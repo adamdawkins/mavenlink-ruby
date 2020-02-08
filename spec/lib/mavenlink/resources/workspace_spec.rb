@@ -18,7 +18,7 @@ RSpec.describe Mavenlink::Workspace do
     it "should be listable", :vcr do
       workspaces = Mavenlink::Workspace.list
       expect(a_request(:get, "#{Mavenlink.api_base}/workspaces")).to have_been_made
-      expect(workspaces).to be_a Mavenlink::ListObject
+      expect(workspaces).to be_a Mavenlink::List
       expect(workspaces.first).to be_a Mavenlink::Workspace
     end
   end

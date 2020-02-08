@@ -18,7 +18,7 @@ RSpec.describe Mavenlink::WorkspaceGroup do
     it "should be listable", :vcr do
       workspace_groups = Mavenlink::WorkspaceGroup.list
       expect(a_request(:get, "#{Mavenlink.api_base}/workspace_groups")).to have_been_made
-      expect(workspace_groups).to be_a Mavenlink::ListObject
+      expect(workspace_groups).to be_a Mavenlink::List
       expect(workspace_groups.first).to be_a Mavenlink::WorkspaceGroup
     end
   end
@@ -27,7 +27,7 @@ RSpec.describe Mavenlink::WorkspaceGroup do
     it "should list the Workspaces for the provided WorkspaceGroup id", :vcr do
       workspaces = Mavenlink::WorkspaceGroup.list_workspaces(2_551_145)
       expect(a_request(:get, "#{Mavenlink.api_base}/workspaces?workspace_groups=2551145")).to have_been_made
-      expect(workspaces).to be_a Mavenlink::ListObject
+      expect(workspaces).to be_a Mavenlink::List
       expect(workspaces.to_a.first).to be_a Mavenlink::Workspace
     end
   end
@@ -40,7 +40,7 @@ RSpec.describe Mavenlink::WorkspaceGroup do
         a_request(:get, "#{Mavenlink.api_base}/custom_field_values")
         .with(query: { subject_type: "workspace_group", subject_id: "2551145" })
       ).to have_been_made
-      expect(custom_field_values).to be_a Mavenlink::ListObject
+      expect(custom_field_values).to be_a Mavenlink::List
       expect(custom_field_values.to_a.first).to be_a Mavenlink::CustomFieldValue
     end
   end

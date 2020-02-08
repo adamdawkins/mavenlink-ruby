@@ -18,7 +18,7 @@ RSpec.describe Mavenlink::Invoice, type: :model do
     it "should be listable", :vcr do
       invoices = Mavenlink::Invoice.list
       expect(a_request(:get, "#{Mavenlink.api_base}/invoices")).to have_been_made
-      expect(invoices).to be_a Mavenlink::ListObject
+      expect(invoices).to be_a Mavenlink::List
       expect(invoices.first).to be_a Mavenlink::Invoice
     end
   end

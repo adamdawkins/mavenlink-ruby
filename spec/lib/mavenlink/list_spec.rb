@@ -2,7 +2,7 @@
 
 require_relative "../../spec_helper"
 
-RSpec.describe Mavenlink::ListObject do
+RSpec.describe Mavenlink::List do
   let(:response) do
     {
       "count" => 3,
@@ -32,13 +32,13 @@ RSpec.describe Mavenlink::ListObject do
   end
 
   it "should provide #count via Enumerable" do
-    list = Mavenlink::ListObject.new(MockResource, response)
+    list = Mavenlink::List.new(MockResource, response)
 
     expect(list.count).to eq 3
   end
 
   it "should provide #each" do
-    list = Mavenlink::ListObject.new(MockResource, response)
+    list = Mavenlink::List.new(MockResource, response)
     expect(list.each.to_a.count).to eq 3
     expect(list.each.to_a.first).to be_a MockResource
   end
@@ -111,7 +111,7 @@ RSpec.describe Mavenlink::ListObject do
       }
     end
 
-    let(:list) { Mavenlink::ListObject.new(Mavenlink::Thing, initial_response) }
+    let(:list) { Mavenlink::List.new(Mavenlink::Thing, initial_response) }
     it "requests all the pages from the API" do
       list.auto_paging_each
       expect(a_request(:get, "#{Mavenlink.api_base}/things").with(query: { page: 2 })).to have_been_made

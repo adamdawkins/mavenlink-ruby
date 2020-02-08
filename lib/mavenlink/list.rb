@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Mavenlink
-  class ListObject
+  class List
     include Enumerable
 
     attr_accessor :data

@@ -6,13 +6,13 @@ module Mavenlink
 
     def self.list_workspaces(id)
       response = get("/workspaces?workspace_groups=#{id}")
-      ListObject.new(Workspace, response)
+      List.new(Workspace, response)
     end
 
     def self.list_custom_field_values(id)
       response = get("/custom_field_values", subject_type: OBJECT_NAME,
                                              subject_id: id)
-      ListObject.new(CustomFieldValue, response)
+      List.new(CustomFieldValue, response)
     end
 
     def workspaces
