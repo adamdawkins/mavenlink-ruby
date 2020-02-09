@@ -145,11 +145,12 @@ RSpec.describe Mavenlink::List do
     end
 
     let(:list) { Mavenlink::List.new(Mavenlink::Thing, initial_response) }
+    let(:url) { "#{Mavenlink.api_base}/things" }
     it "requests all the pages from the API" do
       list.auto_paging_each(&:id)
-      expect(a_request(:get, "#{Mavenlink.api_base}/things").with(query: { page: 2 })).to have_been_made
-      expect(a_request(:get, "#{Mavenlink.api_base}/things").with(query: { page: 3 })).to have_been_made
-      expect(a_request(:get, "#{Mavenlink.api_base}/things").with(query: { page: 4 })).to_not have_been_made
+      expect(a_request(:get, url).with(query: { page: 2 })).to have_been_made
+      expect(a_request(:get, url).with(query: { page: 3 })).to have_been_made
+      expect(a_request(:get, url).with(query: { page: 4 })).to_not have_been_made
     end
 
     it "returns an Enumerable" do

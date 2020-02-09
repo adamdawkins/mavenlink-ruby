@@ -25,8 +25,9 @@ RSpec.describe Mavenlink::WorkspaceGroup do
 
   describe ".list_workspaces" do
     it "should list the Workspaces for the provided WorkspaceGroup id", :vcr do
-      workspaces = Mavenlink::WorkspaceGroup.list_workspaces(2_551_145)
-      expect(a_request(:get, "#{Mavenlink.api_base}/workspaces?workspace_groups=2551145")).to have_been_made
+      workspaces = Mavenlink::WorkspaceGroup.list_workspaces(2551145)
+      expect(a_request(:get, "#{Mavenlink.api_base}/workspaces")
+                       .with(query: { workspace_groups: 2551145 })).to have_been_made
       expect(workspaces).to be_a Mavenlink::List
       expect(workspaces.to_a.first).to be_a Mavenlink::Workspace
     end

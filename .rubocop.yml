@@ -23,22 +23,8 @@ Layout/FirstHashElementIndentation:
 Layout/HeredocIndentation:
   Enabled: false
 
-Layout/LineLength:
-  Exclude:
-    - "spec/**/*.rb"
-
 Metrics/BlockLength:
   Max: 40
-  Exclude:
-    # `context` in specs are blocks and get quite large, so exclude the spec
-    # directory from having to adhere to this rule.
-    - "spec/**/*.rb"
-
-Metrics/ClassLength:
-  Exclude:
-    # spec classes get quite large, so exclude the spec directory from having
-    # to adhere to this rule.
-    - "spec/**/*.rb"
 
 Style/AccessModifierDeclarations:
   EnforcedStyle: inline
@@ -49,11 +35,6 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   EnforcedStyle: always
 
-Style/NumericLiterals:
-  Exclude:
-    # We have a lot of numeric ids in our specs and it looks weird splitting
-    # them into thousand separators
-    - "spec/**/*.rb"
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes

@@ -1,0 +1,20 @@
+inherit_from:
+  - ../.rubocop.yml
+
+Layout/LineLength:
+  Max: 100
+
+Metrics/BlockLength:
+  # `context` in specs are blocks and get quite large, so exclude the spec
+  # directory from having to adhere to this rule.
+  Enabled: false
+
+Metrics/ClassLength:
+  # spec classes get quite large, so exclude the spec directory from having
+  # to adhere to this rule.
+  Enabled: false
+
+Style/NumericLiterals:
+  # We have a lot of numeric ids in our specs and it looks weird splitting
+  # them into thousand separators
+  Enabled: false
