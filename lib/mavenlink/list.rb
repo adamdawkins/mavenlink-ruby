@@ -15,14 +15,7 @@ module Mavenlink
       @page_number = @meta["page_number"]
       @page_count = @meta["page_count"]
       @options = options
-      results = Util.results(response)
-
-      if (filters = Util.stringify_keys(@options[:filters]))
-        results.select! do |res|
-          filters.map { |key, value| res[key] == value }.all?
-        end
-      end
-
+      results = setup_results(response)
       @data = results.map { |thing| klass.new(thing) }
     end
 
@@ -49,6 +42,18 @@ module Mavenlink
 
     def next_page
       @klass.list({ page: @page_number + 1 }, @options)
+    end
+
+    private def setup_results(response)
+      results = Util.results(response)
+
+      if (filters = Util.stringify_keys(@options[:filters]))
+        results.select! do |res|
+          filters.map { |key, value| res[key] == value }.all?
+        end
+      end
+
+      results
     end
   end
 end
