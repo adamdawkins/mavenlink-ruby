@@ -9,6 +9,7 @@ group :development do
 end
 
 group :test do
+  gem "dotenv"
   gem "rake"
   gem "rspec"
   gem "simplecov", require: false

@@ -15,7 +15,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 08 Feb 2020 20:05:37 GMT
+      - Sun, 09 Feb 2020 22:23:19 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -31,9 +31,9 @@ http_interactions:
       Expires:
       - Fri, 01 Jan 1990 00:00:00 GMT
       X-Request-Id:
-      - 319bbe06-2c3b-4dff-b075-e2e68b79c43d
+      - ea2c39f9-e7d6-43a6-a94a-1374cc9e75cc
       X-Runtime:
-      - '0.062780'
+      - '0.053277'
       Strict-Transport-Security:
       - max-age=631139040
       X-Content-Type-Options:
@@ -48,7 +48,8 @@ http_interactions:
       - 1; mode=block
     body:
       encoding: UTF-8
-      string: '{"count":1,"results":[{"key":"custom_field_values","id":"314259865"}],"custom_field_values":{"314259865":{"subject_type":"workspace_group","subject_id":2223265,"value":"cus_xyz","account_id":6300575,"custom_field_name":"Stripe ID","type":"string","display_value":"cus_xyz","can_edit":true,"created_at":"2020-01-02T12:30:06-08:00","updated_at":"2020-01-02T12:30:06-08:00","custom_field_id":"602325","setter_id":"12304555","id":"314259865"}},"meta":{"count":1,"page_count":1,"page_number":1,"page_size":20}}'
-    http_version:
-  recorded_at: Sat, 08 Feb 2020 20:05:37 GMT
+      string: '{"count":1,"results":[{"key":"custom_field_values","id":"314259865"}],"custom_field_values":{"314259865":{"subject_type":"workspace_group","subject_id":2223265,"value":"cus_FxpO6Tatea1K3y","account_id":6300575,"custom_field_name":"Stripe
+        ID","type":"string","display_value":"cus_FxpO6Tatea1K3y","can_edit":true,"created_at":"2020-01-02T12:30:06-08:00","updated_at":"2020-01-02T12:30:06-08:00","custom_field_id":"602325","setter_id":"12304555","id":"314259865"}},"meta":{"count":1,"page_count":1,"page_number":1,"page_size":20}}'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2020 22:23:19 GMT
 recorded_with: VCR 5.0.0

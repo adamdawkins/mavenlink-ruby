@@ -3,6 +3,7 @@
 # require "simplecov"
 # SimpleCov.start
 
+require "dotenv/load"
 require "mavenlink"
 require "rspec"
 require "webmock/rspec"
