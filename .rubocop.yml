@@ -2,12 +2,6 @@ AllCops:
   DisplayCopNames: true
   TargetRubyVersion: 2.6.5
 
-  Exclude:
-    # brandur: Exclude ephmeral script-like files that I use to try and
-    # reproduce problems with the library. If you know of a better way of doing
-    # this (e.g. exclude files not tracked by Git), feel free to change it.
-    - "example_*"
-
 Layout/CaseIndentation:
   EnforcedStyle: end
 
@@ -17,15 +11,6 @@ Layout/FirstArrayElementIndentation:
 Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
-# This can be re-enabled once we're 2.3+ only and can use the squiggly heredoc
-# operator. Prior to that, Rubocop recommended bringing in a library like
-# ActiveSupport to get heredoc indentation, which is just terrible.
-Layout/HeredocIndentation:
-  Enabled: false
-
-Metrics/BlockLength:
-  Max: 40
-
 Style/AccessModifierDeclarations:
   EnforcedStyle: inline
 
@@ -34,7 +19,6 @@ Style/Documentation:
 
 Style/FrozenStringLiteralComment:
   EnforcedStyle: always
-
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
