@@ -37,7 +37,6 @@ RSpec.describe Mavenlink::CustomFieldValue do
   end
 
   describe "#subject" do
-    # rubocop:disable Style/NumericLiterals
     let(:custom_field_value_attrs) do
       {
         "subject_type": "workspace_group",
@@ -55,7 +54,6 @@ RSpec.describe Mavenlink::CustomFieldValue do
         "id": "314259865",
       }
     end
-    # rubocop:enable Style/NumericLiterals
 
     before do
       allow(Mavenlink::WorkspaceGroup).to receive(:retrieve).with(2_223_265) do

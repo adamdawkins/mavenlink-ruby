@@ -17,9 +17,9 @@ module Mavenlink
       @options = options
       results = Util.results(response)
 
-      if @options[:filters]
+      if (filters = Util.stringify_keys(@options[:filters]))
         results.select! do |res|
-          @options[:filters].map { |key, value| res[key] == value }.all?
+          filters.map { |key, value| res[key] == value }.all?
         end
       end
 
