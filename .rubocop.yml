@@ -58,6 +58,12 @@ Style/FrozenStringLiteralComment:
 Style/NumericPredicate:
   Enabled: false
 
+Style/NumericLiterals:
+  Exclude:
+    # We have a lot of numeric ids in our specs and it looks weird splitting
+    # them into thousand separators
+    - "spec/**/*.rb"
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
