@@ -15,6 +15,18 @@ module Mavenlink
           }
           HTTParty.get("#{api_base}#{path}", options)
         end
+
+        def post(path, params = {})
+          api_base = Mavenlink.api_base
+          api_key = Mavenlink.api_key
+          options = {
+            body: params,
+            headers: {
+              Authorization: "Bearer #{api_key}",
+            },
+          }
+          HTTParty.post("#{api_base}#{path}", options)
+        end
       end
 
       def self.included(base)

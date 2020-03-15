@@ -2,6 +2,7 @@
 
 class Util
   def self.results(response)
+    pp response
     response["results"].map do |result|
       key = result["key"]
       id = result["id"]

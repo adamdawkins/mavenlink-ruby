@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.mavenlink.com/api/v1/invoices/8185325
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer API_TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 15 Mar 2020 13:22:10 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Etag:
+      - W/"5d6f7159fe4f844e234b928793c4b4c6"
+      X-Request-Id:
+      - e7089c92-d57c-40ec-be70-4b6ec4004164
+      X-Runtime:
+      - '0.054908'
+      Strict-Transport-Security:
+      - max-age=631139040
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"count":1,"results":[{"key":"invoices","id":"8185325"}],"invoices":{"8185325":{"created_at":"2020-02-10T19:12:32-08:00","updated_at":"2020-03-02T13:32:27-08:00","invoice_date":"2020-01-31","due_date":"2020-03-01","status":"accepted
+        payment","title":"Invoice #11837","user_invoice_number":11837,"user_invoice_title":"","tax_rate":0.0,"purchase_order":"","project_code":"","message":"","draft":false,"payment_schedule":30,"balance_in_cents":19600,"currency":"USD","currency_symbol":"$","currency_base_unit":100,"recipient_id":null,"user_id":"13108775","id":"8185325"}},"meta":{"count":1,"page_count":1,"page_number":1,"page_size":20}}'
+    http_version: 
+  recorded_at: Sun, 15 Mar 2020 13:22:10 GMT
+recorded_with: VCR 5.0.0
