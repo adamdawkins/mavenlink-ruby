@@ -6,13 +6,28 @@ RSpec.describe Mavenlink::CustomFieldValue do
   describe ".list" do
     context "a subject type is provided" do
       it "should be listable", :vcr do
-        custom_field_values = Mavenlink::CustomFieldValue.list("workspace_group")
+        custom_field_values = Mavenlink::CustomFieldValue.list(subject_type: "workspace_group")
         expect(
           a_request(:get, "#{Mavenlink.api_base}/custom_field_values")
           .with(query: { subject_type: "workspace_group" })
         ).to have_been_made
         expect(custom_field_values.data).to be_a Array
         expect(custom_field_values.first).to be_a Mavenlink::CustomFieldValue
+      end
+
+      # The auto_paging_each method is tested in the List spec, but Mavenlink makes
+      # CustomFieldValues API different to everyone elses
+      it "should paginate automatically", :vcr do
+        Mavenlink::CustomFieldValue.list(subject_type: "workspace_group").auto_paging_each(&:id)
+        expect(
+          a_request(:get, "#{Mavenlink.api_base}/custom_field_values")
+          .with(query: { subject_type: "workspace_group" })
+        ).to have_been_made
+
+        expect(
+          a_request(:get, "#{Mavenlink.api_base}/custom_field_values")
+          .with(query: { subject_type: "workspace_group", page: 2 })
+        ).to have_been_made
       end
     end
 

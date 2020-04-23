@@ -25,7 +25,7 @@ module Mavenlink
 
     def self.list(params = {}, options = {})
       response = get(resource_url, params)
-      List.new(self, response, options)
+      List.new(self, response, options, params)
     end
 
     def refresh

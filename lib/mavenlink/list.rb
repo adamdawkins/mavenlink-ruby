@@ -9,9 +9,10 @@ module Mavenlink
     attr_reader :page_number
     attr_reader :page_count
 
-    def initialize(klass, response, options = {})
+    def initialize(klass, response, options = {}, params = {})
       @meta = response["meta"]
       @klass = klass
+      @params = params
       @page_number = @meta["page_number"]
       @page_count = @meta["page_count"]
       @options = options
@@ -41,7 +42,7 @@ module Mavenlink
     end
 
     def next_page
-      @klass.list({ page: @page_number + 1 }, @options)
+      @klass.list(@params.merge(page: @page_number + 1), @options)
     end
 
     private def setup_results(response)

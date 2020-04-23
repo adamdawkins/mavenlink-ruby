@@ -4,14 +4,14 @@ module Mavenlink
   class CustomFieldValue < APIResource
     OBJECT_NAME = "custom_field_value"
 
-    def self.list(subject_type = nil)
-      if subject_type.nil?
+    def self.list(params = {}, options = {})
+      unless params.key? :subject_type
         raise ArgumentError,
               "CustomFieldValues can only be listed with a subject, " \
-              "e.g. CustomFieldValue.list('user')"
+              "e.g. CustomFieldValue.list({subject_type: 'user'})"
       end
 
-      super(subject_type: subject_type)
+      super(params, options)
     end
 
     def subject
