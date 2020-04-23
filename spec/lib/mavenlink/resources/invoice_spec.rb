@@ -18,21 +18,4 @@ RSpec.describe Mavenlink::Invoice, type: :model do
     expect(invoices).to be_a Mavenlink::List
     expect(invoices.first).to be_a Mavenlink::Invoice
   end
-
-  it "should be creatable", :vcr do
-    invoice = Mavenlink::Invoice.create(
-      additional_items: [
-        notes: "",
-        amount: 250,
-        taxable: false,
-        workspace_id: 28370425,
-      ],
-      workspace_id: 28370425,
-      payment_schedule: 30,
-      draft: false,
-      supress_emails: true
-    )
-    expect(a_request(:post, "#{Mavenlink.api_base}/invoices")).to have_been_made
-    expect(invoice).to be_a Mavenlink::Invoice
-  end
 end
