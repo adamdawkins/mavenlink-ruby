@@ -25,9 +25,9 @@ RSpec.describe Mavenlink::Workspace do
 
   describe ".list_invoices" do
     it "should list the Invoices for the provided Workspace id", :vcr do
-      invoices = Mavenlink::Workspace.list_invoices(28370425)
+      invoices = Mavenlink::Workspace.list_invoices(27254285)
       expect(a_request(:get, "#{Mavenlink.api_base}/invoices")
-                       .with(query: { workspace_id: 28370425 })).to have_been_made
+        .with(query: { workspace_id: 27254285 })).to have_been_made
       expect(invoices).to be_a Mavenlink::List
       expect(invoices.to_a.first).to be_a Mavenlink::Invoice
     end

@@ -15,7 +15,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 23 Apr 2020 11:57:42 GMT
+      - Wed, 17 Feb 2021 15:45:43 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,9 +33,9 @@ http_interactions:
       Etag:
       - W/"fa03fe4530947164a5a667189e1586e5"
       X-Request-Id:
-      - 94049300-0f36-4d52-9924-af8f97bda6a3
+      - 955a4e4f-65f8-4c44-a9ca-f611dd6bb676
       X-Runtime:
-      - '0.046558'
+      - '0.075742'
       Strict-Transport-Security:
       - max-age=631139040
       X-Content-Type-Options:
@@ -54,5 +54,5 @@ http_interactions:
         DROP TEST","company":true,"contact_name":"Jonathan Bowen","email":"jonathan@dragondrop.uk","phone_number":"","address":"","website":"","notes":"Test
         client for Stripe Integration","id":"2551145"}},"meta":{"count":1,"page_count":1,"page_number":1,"page_size":20}}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2020 11:57:42 GMT
+  recorded_at: Wed, 17 Feb 2021 15:45:43 GMT
 recorded_with: VCR 5.0.0

@@ -15,7 +15,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 23 Apr 2020 11:57:44 GMT
+      - Wed, 17 Feb 2021 15:45:46 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -31,11 +31,11 @@ http_interactions:
       Expires:
       - Fri, 01 Jan 1990 00:00:00 GMT
       Etag:
-      - W/"0430d972ed884436cd94c66c08522610"
+      - W/"8f87a0358fd35c8d76fadc4bbb2930cb"
       X-Request-Id:
-      - 54aa9a5a-b5f1-4ad6-b34e-359d912f5f9e
+      - 8823cee5-3970-4824-960a-9104b0576b94
       X-Runtime:
-      - '0.114187'
+      - '0.126044'
       Strict-Transport-Security:
       - max-age=631139040
       X-Content-Type-Options:
@@ -51,9 +51,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"count":1,"results":[{"key":"workspaces","id":"28370425"}],"workspaces":{"28370425":{"title":"Dragon
-        Drop - Test Don''t Delete","account_id":6300575,"archived":false,"description":"","due_date":"2019-11-30","effective_due_date":"2019-11-30","start_date":"","budgeted":true,"change_orders_enabled":true,"updated_at":"2020-04-15T11:24:01-07:00","created_at":"2019-11-07T06:54:21-08:00","consultant_role_name":"Kruze
-        Consulting","client_role_name":"Clients","percentage_complete":0,"access_level":"admins","exclude_archived_stories_percent_complete":false,"show_nonbillable_time_on_invoices":true,"can_create_line_items":true,"default_rate":"0.00","currency":"USD","currency_symbol":"$","currency_base_unit":100,"can_invite":true,"has_budget_access":true,"tasks_default_non_billable":false,"rate_card_id":647755,"workspace_invoice_preference_id":5514655,"posts_require_privacy_decision":false,"require_time_approvals":false,"require_expense_approvals":false,"has_active_timesheet_submissions":false,"has_active_expense_report_submissions":false,"status":{"color":"grey","key":130,"message":"Not
-        Started"},"update_whitelist":["title","budgeted","start_date","due_date","description","currency","access_level","consultant_role_name","client_role_name","rate_card_id","exclude_archived_stories_percent_complete","tasks_default_non_billable","stories_are_fixed_fee_by_default","expenses_in_burn_rate","posts_require_privacy_decision","status_key","invoice_preference","approver_id","approver_ids","workspace_group_ids","project_template_start_date","project_template_assignment_mappings","project_template_weekends_as_workdays","project_template_create_unnamed_resources","project_tracker_template_id","target_margin","external_reference","account_color_id","show_nonbillable_time_on_invoices","archived","price","project_template_before_story_id","change_orders_enabled"],"account_features":{"time_trackable":false,"has_time_entry_role_picker":false,"project_side_panel":true},"permissions":{"can_upload_files":true,"can_private_message":true,"can_join":false,"is_participant":true,"access_level":"admin","team_lead":true,"user_is_client":false,"can_change_price":false,"can_change_story_billable":true,"can_post":true,"can_edit":true,"restricted":false,"can_see_financials":true,"is_guest_on_project":false},"over_budget":false,"expenses_in_burn_rate":true,"total_expenses_in_cents":0,"price_in_cents":5000000,"price":"$50,000","percent_of_budget_used":0,"budget_used":"$20","budget_used_in_cents":2000,"budget_remaining":"$49,980","target_margin":null,"stories_are_fixed_fee_by_default":false,"creator_id":"12069395","primary_maven_id":"12069395","id":"28370425"}},"meta":{"count":1,"page_count":1,"page_number":1,"page_size":20}}'
+        Drop - Test Don''t Delete","account_id":6300575,"archived":true,"description":"","due_date":"2019-11-30","effective_due_date":"2019-11-30","start_date":"","budgeted":true,"change_orders_enabled":true,"updated_at":"2021-02-12T16:10:02-08:00","created_at":"2019-11-07T06:54:21-08:00","consultant_role_name":"Kruze
+        Consulting","client_role_name":"Clients","percentage_complete":0,"access_level":"admins","exclude_archived_stories_percent_complete":false,"show_nonbillable_time_on_invoices":true,"can_create_line_items":false,"default_rate":"0.00","currency":"USD","currency_symbol":"$","currency_base_unit":100,"can_invite":true,"has_budget_access":true,"tasks_default_non_billable":false,"rate_card_id":647755,"workspace_invoice_preference_id":5514655,"posts_require_privacy_decision":false,"require_time_approvals":false,"require_expense_approvals":false,"has_active_timesheet_submissions":false,"has_active_expense_report_submissions":false,"status":{"color":"grey","key":130,"message":"Not
+        Started"},"update_whitelist":["title","budgeted","start_date","due_date","description","currency","access_level","consultant_role_name","client_role_name","rate_card_id","exclude_archived_stories_percent_complete","revenue_recognition_method","tasks_default_non_billable","stories_are_fixed_fee_by_default","expenses_in_burn_rate","posts_require_privacy_decision","status_key","invoice_preference","approver_id","approver_ids","workspace_group_ids","project_template_start_date","project_template_assignment_mappings","project_template_weekends_as_workdays","project_template_create_unnamed_resources","project_tracker_template_id","target_margin","external_reference","account_color_id","show_nonbillable_time_on_invoices","archived","price","project_template_before_story_id","change_orders_enabled"],"account_features":{"time_trackable":false,"has_time_entry_role_picker":true,"project_side_panel":true},"permissions":{"can_upload_files":false,"can_private_message":true,"can_join":false,"is_participant":true,"access_level":"admin","team_lead":false,"user_is_client":false,"can_change_price":false,"can_change_story_billable":true,"can_post":false,"can_edit":false,"restricted":false,"can_see_financials":true,"is_guest_on_project":false},"over_budget":false,"expenses_in_burn_rate":true,"total_expenses_in_cents":0,"price_in_cents":5000000,"price":"$50,000","percent_of_budget_used":0,"budget_used":"$20","budget_used_in_cents":2000,"budget_remaining":"$49,980","target_margin":null,"stories_are_fixed_fee_by_default":false,"creator_id":"12069395","primary_maven_id":"11961925","id":"28370425"}},"meta":{"count":1,"page_count":1,"page_number":1,"page_size":20}}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2020 11:57:44 GMT
+  recorded_at: Wed, 17 Feb 2021 15:45:46 GMT
 recorded_with: VCR 5.0.0
