@@ -15,7 +15,11 @@ module Mavenlink
     end
 
     def self.plural_name
-      "#{self::OBJECT_NAME.downcase}s"
+      if self::OBJECT_NAME.downcase == "story"
+        "stories"
+      else
+        "#{self::OBJECT_NAME.downcase}s"
+      end
     end
 
     def self.retrieve(id)
