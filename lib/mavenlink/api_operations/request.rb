@@ -23,6 +23,7 @@ module Mavenlink
             body: params,
             headers: {
               Authorization: "Bearer #{api_key}",
+              type: "application/json",
             },
           }
           HTTParty.post("#{api_base}#{path}", options)
