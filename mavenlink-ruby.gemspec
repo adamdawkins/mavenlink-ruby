@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(::File.join(::File.dirname(__FILE__), "lib"))
 
 Gem::Specification.new do |s|
   s.name        = "mavenlink-ruby"
-  s.version     = "0.0.8"
-  s.date        = "2021-02-22"
+  s.version     = "0.0.9"
+  s.date        = "2021-04-18"
   s.summary     = "Ruby Mavenlink API Wrapper"
   s.description = "Inspired by Stripe's stripe-ruby"
   s.authors     = ["Adam Dawkins"]
