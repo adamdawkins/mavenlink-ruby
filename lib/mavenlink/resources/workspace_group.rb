@@ -4,9 +4,9 @@ module Mavenlink
   class WorkspaceGroup < APIResource
     OBJECT_NAME = "workspace_group"
 
-    def self.list_workspaces(id)
+    def self.list_workspaces(id, params = {})
       response = get("/workspaces?workspace_groups=#{id}")
-      List.new(Workspace, response)
+      List.new(Workspace, response, {}, params.merge({ workspace_group_id: id }))
     end
 
     def self.list_custom_field_values(id)
