@@ -4,6 +4,8 @@ module Mavenlink
   class APIResource
     include Mavenlink::APIOperations::Request
 
+    attr_reader :values
+
     def self.resource_url
       if self == APIResource
         raise NotImplementedError,
