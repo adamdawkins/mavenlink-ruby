@@ -5,13 +5,17 @@ module Mavenlink
     OBJECT_NAME = "workspace"
 
     def self.list_invoices(id, params = {})
-      response = get("/invoices?workspace_id=#{id}")
-      List.new(Invoice, response, {}, params.merge(workspace_id: id))
+      query_params = params.merge(workspace_id: id)
+      query = query_params.to_query
+      response = get("/invoices?#{query}")
+      List.new(Invoice, response, {}, query_params)
     end
 
     def self.list_stories(id, params = {})
-      response = get("/stories?workspace_id=#{id}")
-      List.new(Story, response, {}, params.merge(workspace_id: id))
+      query_params = params.merge(workspace_id: id)
+      query = query_params.to_query
+      response = get("/stories?#{query}")
+      List.new(Story, response, {}, query_params)
     end
   end
 end
