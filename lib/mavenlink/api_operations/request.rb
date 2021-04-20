@@ -13,6 +13,7 @@ module Mavenlink
               Authorization: "Bearer #{api_key}",
             },
           }
+          pp [api_base, path, options]
           HTTParty.get("#{api_base}#{path}", options)
         end
 
