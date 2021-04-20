@@ -5,8 +5,10 @@ module Mavenlink
     OBJECT_NAME = "workspace_group"
 
     def self.list_workspaces(id, params = {})
-      response = get("/workspaces?workspace_groups=#{id}")
-      List.new(Workspace, response, {}, params.merge({ workspace_group_id: id }))
+      query_params = params.merge(workspace_groups: id)
+      query = query_params.to_query
+      response = get("/workspaces?#{query}")
+      List.new(Workspace, response, {}, query_params)
     end
 
     def self.list_custom_field_values(id)
