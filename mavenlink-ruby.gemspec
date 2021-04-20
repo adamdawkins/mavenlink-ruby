@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(::File.join(::File.dirname(__FILE__), "lib"))
 
 Gem::Specification.new do |s|
   s.name        = "mavenlink-ruby"
-  s.version     = "0.0.10"
+  s.version     = "0.0.11"
   s.date        = "2021-04-18"
   s.summary     = "Ruby Mavenlink API Wrapper"
   s.description = "Inspired by Stripe's stripe-ruby"
@@ -17,5 +17,5 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- test/*`.split("\n")
 
   s.require_paths = ["lib"]
-  s.add_dependency "activesupport", "6.1.3"
+  s.add_dependency "activesupport", "~> 6.0.0"
 end
