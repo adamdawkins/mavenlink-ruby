@@ -27,7 +27,7 @@ RSpec.describe Mavenlink::Workspace do
     it "should list the Invoices for the provided Workspace id", :vcr do
       invoices = Mavenlink::Workspace.list_invoices(27254285)
       expect(a_request(:get, "#{Mavenlink.api_base}/invoices")
-        .with(query: { workspace_id: 27254285 })).to have_been_made
+        .with(query: {workspace_id: 27254285})).to have_been_made
       expect(invoices).to be_a Mavenlink::List
       expect(invoices.to_a.first).to be_a Mavenlink::Invoice
     end
@@ -36,7 +36,7 @@ RSpec.describe Mavenlink::Workspace do
     it "should list the Storys for the provided Workspace id", :vcr do
       storys = Mavenlink::Workspace.list_stories(27254285)
       expect(a_request(:get, "#{Mavenlink.api_base}/stories")
-        .with(query: { workspace_id: 27254285 })).to have_been_made
+        .with(query: {workspace_id: 27254285})).to have_been_made
       expect(storys).to be_a Mavenlink::List
       expect(storys.to_a.first).to be_a Mavenlink::Story
     end

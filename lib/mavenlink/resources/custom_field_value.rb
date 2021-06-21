@@ -7,8 +7,8 @@ module Mavenlink
     def self.list(params = {}, options = {})
       unless params.key? :subject_type
         raise ArgumentError,
-              "CustomFieldValues can only be listed with a subject, " \
-              "e.g. CustomFieldValue.list({subject_type: 'user'})"
+          "CustomFieldValues can only be listed with a subject, " \
+          "e.g. CustomFieldValue.list({subject_type: 'user'})"
       end
 
       super(params, options)

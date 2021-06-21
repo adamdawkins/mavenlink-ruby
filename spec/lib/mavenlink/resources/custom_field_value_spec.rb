@@ -9,7 +9,7 @@ RSpec.describe Mavenlink::CustomFieldValue do
         custom_field_values = Mavenlink::CustomFieldValue.list(subject_type: "workspace_group")
         expect(
           a_request(:get, "#{Mavenlink.api_base}/custom_field_values")
-          .with(query: { subject_type: "workspace_group" })
+          .with(query: {subject_type: "workspace_group"})
         ).to have_been_made
         expect(custom_field_values.data).to be_a Array
         expect(custom_field_values.first).to be_a Mavenlink::CustomFieldValue
@@ -21,12 +21,12 @@ RSpec.describe Mavenlink::CustomFieldValue do
         Mavenlink::CustomFieldValue.list(subject_type: "workspace_group").auto_paging_each(&:id)
         expect(
           a_request(:get, "#{Mavenlink.api_base}/custom_field_values")
-          .with(query: { subject_type: "workspace_group" })
+          .with(query: {subject_type: "workspace_group"})
         ).to have_been_made
 
         expect(
           a_request(:get, "#{Mavenlink.api_base}/custom_field_values")
-          .with(query: { subject_type: "workspace_group", page: 2 })
+          .with(query: {subject_type: "workspace_group", page: 2})
         ).to have_been_made
       end
     end
@@ -54,19 +54,19 @@ RSpec.describe Mavenlink::CustomFieldValue do
   describe "#subject" do
     let(:custom_field_value_attrs) do
       {
-        "subject_type": "workspace_group",
-        "subject_id": 2223265,
-        "value": "ABCD",
-        "account_id": 6300575,
-        "custom_field_name": "Stripe ID",
-        "type": "string",
-        "display_value": "ABCD",
-        "can_edit": true,
-        "created_at": "2020-01-02T12:30:06-08:00",
-        "updated_at": "2020-01-02T12:30:06-08:00",
-        "custom_field_id": "602325",
-        "setter_id": "12304555",
-        "id": "314259865",
+        subject_type: "workspace_group",
+        subject_id: 2223265,
+        value: "ABCD",
+        account_id: 6300575,
+        custom_field_name: "Stripe ID",
+        type: "string",
+        display_value: "ABCD",
+        can_edit: true,
+        created_at: "2020-01-02T12:30:06-08:00",
+        updated_at: "2020-01-02T12:30:06-08:00",
+        custom_field_id: "602325",
+        setter_id: "12304555",
+        id: "314259865"
       }
     end
 
@@ -76,7 +76,7 @@ RSpec.describe Mavenlink::CustomFieldValue do
       end
     end
     it "should retrieve the subject from the relevant class" do
-      custom_field_value =  Mavenlink::CustomFieldValue.new(custom_field_value_attrs)
+      custom_field_value = Mavenlink::CustomFieldValue.new(custom_field_value_attrs)
       custom_field_value.subject
       expect(Mavenlink::WorkspaceGroup).to have_received(:retrieve)
     end

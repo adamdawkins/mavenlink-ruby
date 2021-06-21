@@ -27,7 +27,7 @@ RSpec.describe Mavenlink::WorkspaceGroup do
     it "should list the Workspaces for the provided WorkspaceGroup id", :vcr do
       workspaces = Mavenlink::WorkspaceGroup.list_workspaces(2551145)
       expect(a_request(:get, "#{Mavenlink.api_base}/workspaces")
-                       .with(query: { workspace_groups: 2551145 })).to have_been_made
+                       .with(query: {workspace_groups: 2551145})).to have_been_made
       expect(workspaces).to be_a Mavenlink::List
       expect(workspaces.to_a.first).to be_a Mavenlink::Workspace
     end
@@ -44,38 +44,38 @@ RSpec.describe Mavenlink::WorkspaceGroup do
     before do
       # Numeric Literals just look weird in IDs
       stub_request(:get, "#{Mavenlink.api_base}/custom_field_values")
-        .with(query: { subject_type: "workspace_group" })
+        .with(query: {subject_type: "workspace_group"})
         .to_return(
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
           },
           body: JSON.generate(
             count: 4,
             results: [
-              { key: "custom_field_values", id: "111" },
-              { key: "custom_field_values", id: "222" },
-              { key: "custom_field_values", id: "888" },
-              { key: "custom_field_values", id: "999" },
+              {key: "custom_field_values", id: "111"},
+              {key: "custom_field_values", id: "222"},
+              {key: "custom_field_values", id: "888"},
+              {key: "custom_field_values", id: "999"}
             ],
             custom_field_values: {
-              "111": { id: "111",
-                       subject_type: "workspace_group", subject_id: 2551145,
-                       custom_field_name: "Foo", value: "Bar", },
-              "222": { id: "222",
-                       subject_type: "workspace_group", subject_id: 2551145,
-                       custom_field_name: "Stripe ID", value: "cus_xyz", },
-              "888": { id: "888",
-                       subject_type: "workspace_group", subject_id: 9999999,
-                       custom_field_name: "Bar", value: "I'm having the muffin", },
-              "999": { id: "999",
-                       subject_type: "workspace_group", subject_id: 9999999,
-                       custom_field_name: "Stripe ID", value: "cus_xyz", },
+              "111": {id: "111",
+                      subject_type: "workspace_group", subject_id: 2551145,
+                      custom_field_name: "Foo", value: "Bar"},
+              "222": {id: "222",
+                      subject_type: "workspace_group", subject_id: 2551145,
+                      custom_field_name: "Stripe ID", value: "cus_xyz"},
+              "888": {id: "888",
+                      subject_type: "workspace_group", subject_id: 9999999,
+                      custom_field_name: "Bar", value: "I'm having the muffin"},
+              "999": {id: "999",
+                      subject_type: "workspace_group", subject_id: 9999999,
+                      custom_field_name: "Stripe ID", value: "cus_xyz"}
             },
             meta: {
               count: 4,
               page_count: 1,
               page_number: 1,
-              page_size: 20,
+              page_size: 20
             }
           )
         )
@@ -85,7 +85,7 @@ RSpec.describe Mavenlink::WorkspaceGroup do
     it "should list CustomFieldValues" do
       expect(
         a_request(:get, "#{Mavenlink.api_base}/custom_field_values")
-        .with(query: { subject_type: "workspace_group" })
+        .with(query: {subject_type: "workspace_group"})
       ).to have_been_made
       expect(custom_field_values).to be_a Mavenlink::List
       expect(custom_field_values.to_a.first).to be_a Mavenlink::CustomFieldValue

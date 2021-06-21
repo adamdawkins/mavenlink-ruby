@@ -7,10 +7,10 @@ module Mavenlink
     # rubocop:disable Metrics/MethodLength
     def self.create(workspace_id:, invoice_id:)
       response = post("/external_payments",
-                      external_payment: {
-                        workspace_id: workspace_id,
-                        invoice_id: invoice_id,
-                      })
+        external_payment: {
+          workspace_id: workspace_id,
+          invoice_id: invoice_id
+        })
 
       data = Util.results(response).first
       new(data)

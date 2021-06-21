@@ -9,8 +9,8 @@ module Mavenlink
     def self.resource_url
       if self == APIResource
         raise NotImplementedError,
-              "APIResource is an abstract class, you should before actions "\
-              "on its subclasses (Workspace, Invoice, etc.)"
+          "APIResource is an abstract class, you should before actions "\
+          "on its subclasses (Workspace, Invoice, etc.)"
       end
 
       "/#{plural_name}"

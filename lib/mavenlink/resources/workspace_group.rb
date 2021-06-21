@@ -14,8 +14,8 @@ module Mavenlink
     def self.list_custom_field_values(id)
       response = get("/custom_field_values", subject_type: OBJECT_NAME)
       List.new(CustomFieldValue, response,
-               { filters: { subject_id: id.to_i } },
-               subject_type: OBJECT_NAME)
+        {filters: {subject_id: id.to_i}},
+        subject_type: OBJECT_NAME)
     end
 
     def workspaces

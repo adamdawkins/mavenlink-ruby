@@ -5,14 +5,13 @@ source "https://rubygems.org"
 gem "httparty"
 
 group :development do
-  gem "rubocop"
+  gem "standardrb"
 end
 
 group :test do
   gem "dotenv"
   gem "rake"
   gem "rspec"
-  gem "simplecov", require: false
   gem "vcr"
   gem "webmock"
 end

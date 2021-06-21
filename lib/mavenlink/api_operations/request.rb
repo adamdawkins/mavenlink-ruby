@@ -10,8 +10,8 @@ module Mavenlink
           options = {
             query: params,
             headers: {
-              Authorization: "Bearer #{api_key}",
-            },
+              Authorization: "Bearer #{api_key}"
+            }
           }
           HTTParty.get("#{api_base}#{path}", options)
         end
@@ -23,8 +23,8 @@ module Mavenlink
             body: params,
             headers: {
               Authorization: "Bearer #{api_key}",
-              type: "application/json",
-            },
+              type: "application/json"
+            }
           }
           HTTParty.post("#{api_base}#{path}", options)
         end
