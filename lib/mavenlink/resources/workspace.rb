@@ -5,7 +5,7 @@ module Mavenlink
     OBJECT_NAME = "workspace"
 
     def self.list_invoices(id, params = {})
-      query_params = params.merge(workspace_id: id)
+      query_params = Util.flatten_params(params.merge(workspace_id: id))
       query = query_params.to_query
       response = get("/invoices?#{query}")
       List.new(Invoice, response, {}, query_params)

@@ -31,6 +31,12 @@ RSpec.describe Mavenlink::Workspace do
       expect(invoices).to be_a Mavenlink::List
       expect(invoices.to_a.first).to be_a Mavenlink::Invoice
     end
+
+    it "should pass other options to the invoices", :vcr do
+      invoices = Mavenlink::Workspace.list_invoices(27254285, {include: %w[time_entries expenses]})
+      expect(a_request(:get, "#{Mavenlink.api_base}/invoices")
+        .with(query: {workspace_id: 27254285, include: "time_entries,expenses"})).to have_been_made
+    end
   end
   describe ".list_stories" do
     it "should list the Storys for the provided Workspace id", :vcr do
