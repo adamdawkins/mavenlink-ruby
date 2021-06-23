@@ -31,6 +31,23 @@ module Mavenlink
       new(values[:id]).send(:initialize_from, values, opts)
     end
 
+    def to_hash
+      maybe_to_hash = lambda do |value|
+        return nil if value.nil?
+
+        value.respond_to?(:to_hash) ? value.to_hash : value
+      end
+
+      @values.each_with_object({}) do |(key, value), acc|
+        acc[key] = case value
+                   when Array
+                     value.map(&maybe_to_hash)
+                   else
+                     maybe_to_hash.call(value)
+        end
+      end
+    end
+
     # Sets all keys within the MavenlinkObject as unsaved so that they will be
     # included with an update when #serialize_params is called. This method is
     # also recursive, so any MavenlinkObjects contained as values or which are
