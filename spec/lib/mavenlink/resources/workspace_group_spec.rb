@@ -100,11 +100,11 @@ RSpec.describe Mavenlink::WorkspaceGroup do
     before do
       allow(Mavenlink::WorkspaceGroup).to receive(:list_workspaces).and_return(true)
     end
-    let(:workspace_group) { Mavenlink::WorkspaceGroup.new(id: 2551145) }
+    let(:workspace_group) { Mavenlink::WorkspaceGroup.new(2551145) }
 
     it "should defer to .list_workspaces with the current id" do
       allow(Mavenlink::WorkspaceGroup).to receive :list_workspaces
-      workspace_group = Mavenlink::WorkspaceGroup.new(id: 2551145)
+      workspace_group = Mavenlink::WorkspaceGroup.new(2551145)
 
       workspace_group.workspaces
 
@@ -128,7 +128,7 @@ RSpec.describe Mavenlink::WorkspaceGroup do
       allow(Mavenlink::WorkspaceGroup).to receive(:list_custom_field_values).and_return true
     end
 
-    let(:workspace_group) { Mavenlink::WorkspaceGroup.new(id: 2551145) }
+    let(:workspace_group) { Mavenlink::WorkspaceGroup.new(2551145) }
     it "should defer to .list_custom_field_values with the current id" do
       workspace_group.custom_field_values
 

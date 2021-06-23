@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 require "httparty"
+require "active_support"
+require "active_support/core_ext/object"
+require "active_support/core_ext/string/inflections"
 
 module Mavenlink
   @api_version = "v1"
@@ -24,8 +27,10 @@ module Mavenlink
 end
 
 require "mavenlink/list"
+require "mavenlink/object_types"
 require "mavenlink/util"
 
 require "mavenlink/api_operations/request"
+require "mavenlink/mavenlink_object"
 require "mavenlink/api_resource"
 require "mavenlink/resources"

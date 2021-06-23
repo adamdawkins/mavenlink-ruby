@@ -76,7 +76,7 @@ RSpec.describe Mavenlink::CustomFieldValue do
       end
     end
     it "should retrieve the subject from the relevant class" do
-      custom_field_value = Mavenlink::CustomFieldValue.new(custom_field_value_attrs)
+      custom_field_value = Mavenlink::CustomFieldValue.construct_from(custom_field_value_attrs)
       custom_field_value.subject
       expect(Mavenlink::WorkspaceGroup).to have_received(:retrieve)
     end

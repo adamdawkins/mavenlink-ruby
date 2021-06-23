@@ -12,6 +12,17 @@ RSpec.describe Mavenlink::Invoice, type: :model do
     expect(invoice).to be_a Mavenlink::Invoice
   end
 
+  it "should be retrievable with includes", :vcr do
+    invoice = Mavenlink::Invoice.retrieve("8185325", {include: ["time_entries", "fixed_fee_items"]})
+
+    expect(a_request(:get, "#{Mavenlink.api_base}/invoices/8185325?include=time_entries,fixed_fee_items")).to(
+      have_been_made
+    )
+    expect(invoice).to be_a Mavenlink::Invoice
+
+    expect(invoice.time_entries.first).to be_a Mavenlink::TimeEntry
+  end
+
   it "should be listable", :vcr do
     invoices = Mavenlink::Invoice.list
     expect(a_request(:get, "#{Mavenlink.api_base}/invoices")).to have_been_made

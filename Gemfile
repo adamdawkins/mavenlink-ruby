@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
+gem "activesupport"
 gem "httparty"
 
 group :development do

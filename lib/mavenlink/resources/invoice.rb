@@ -22,5 +22,11 @@ module Mavenlink
       data = Util.results(response).first
       new(data)
     end
+
+    def time_entries
+      values["time_entries"].map do |time_entry|
+        Mavenlink::TimeEntry.new(time_entry)
+      end
+    end
   end
 end

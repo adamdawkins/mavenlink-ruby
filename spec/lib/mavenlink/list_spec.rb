@@ -1,4 +1,4 @@
-# rubocop:disable Lint/ConstantDefinitionInBlock
+# rubocop:disable Lint/ConstantDefinitionInBlockz
 
 require_relative "../../spec_helper"
 
@@ -24,11 +24,7 @@ RSpec.describe Mavenlink::List do
     }
   end
 
-  class MockResource
-    attr_reader :id
-    def initialize(args)
-      @id = args[:id]
-    end
+  class MockResource < Mavenlink::MavenlinkObject
   end
 
   it "should provide #count via Enumerable" do
@@ -170,6 +166,7 @@ RSpec.describe Mavenlink::List do
       list.auto_paging_each { Foo.bar }
       expect(Foo).to have_received(:bar).exactly(5).times
     end
+
     describe "filtering" do
       let(:list) { Mavenlink::List.new(Mavenlink::Thing, initial_response, filters: {foo: true}) }
       it "passes filters through each page" do

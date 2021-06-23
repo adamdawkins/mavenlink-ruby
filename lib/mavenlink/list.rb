@@ -17,7 +17,7 @@ module Mavenlink
       @page_count = @meta["page_count"]
       @options = options
       results = setup_results(response)
-      @data = results.map { |thing| klass.new(thing) }
+      @data = results.map { |thing| klass.construct_from(thing, @options) }
     end
 
     def each(&blk)
