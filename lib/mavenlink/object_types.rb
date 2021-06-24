@@ -3,6 +3,7 @@ module Mavenlink
     def self.object_names_to_classes
       {
         CustomFieldValue::OBJECT_NAME => CustomFieldValue,
+        Expense::OBJECT_NAME => Expense,
         ExternalPayment::OBJECT_NAME => ExternalPayment,
         FixedFeeItem::OBJECT_NAME => FixedFeeItem,
         AdditionalItem::OBJECT_NAME => AdditionalItem,
