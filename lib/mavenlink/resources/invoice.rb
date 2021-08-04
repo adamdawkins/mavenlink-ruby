@@ -20,7 +20,7 @@ module Mavenlink
         })
 
       data = Util.results(response).first
-      new(data)
+      construct_from(data)
     end
 
     def time_entries

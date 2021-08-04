@@ -32,9 +32,9 @@ RSpec.describe Mavenlink::Invoice, type: :model do
 
   it "should be creatable", :vcr do
     invoice = Mavenlink::Invoice.create(workspace_id: 36380125,
-                                        story_id: 713894615,
-                                        note: "Monthly MCP Charge",
-                                        amount: 500)
+      story_id: 713894615,
+      note: "Monthly MCP Charge",
+      amount: 500)
 
     # TODO: Fix this test, invoice is being created but body not being interpreted as a hash
     # expect(a_request(:post, "#{Mavenlink.api_base}/invoices")
@@ -52,5 +52,6 @@ RSpec.describe Mavenlink::Invoice, type: :model do
     #         )).to have_been_made
 
     expect(invoice).to be_a Mavenlink::Invoice
+    expect(invoice.status).to eq "new"
   end
 end
